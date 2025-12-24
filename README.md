@@ -6,11 +6,13 @@
 </h2>
 
 <p align="center">
-  <img src="<img width="1365" height="655" alt="snowpipe_architecture" src="https://github.com/user-attachments/assets/47972e91-b41c-420a-abf3-b283c7447a1e" />
-"
-       alt="Snowflake S3 Snowpipe Architecture"
-       width="100%"/>
+  <img
+    src="https://github.com/user-attachments/assets/47972e91-b41c-420a-abf3-b283c7447a1e"
+    alt="Snowflake S3 Snowpipe Architecture"
+    width="100%"
+  />
 </p>
+
 
 <br/>
 
@@ -44,7 +46,7 @@ The project focuses on:
 ---
 
 ## 🏗 Architecture  
-
+'''bash
 AWS S3 (CSV Files)
 ↓
 Snowflake Storage Integration (IAM Role + External ID)
@@ -54,6 +56,7 @@ External Stage
 Snowpipe (AUTO_INGEST = TRUE)
 ↓
 Snowflake Target Table
+'''
 
 <img width="1365" height="655" alt="snowpipe_architecture" src="https://github.com/user-attachments/assets/61bf57c0-e40d-40ff-a596-fd8cf75d1eb0" />
 
@@ -81,6 +84,8 @@ snowflake-s3-snowpipe-ingestion/
 │   └── architecture.png
 │
 └── README.md
+
+'''
 
 ##⚙️ Step-by-Step Implementation
 
