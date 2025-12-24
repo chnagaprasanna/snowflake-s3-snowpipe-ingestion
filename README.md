@@ -87,14 +87,14 @@ snowflake-s3-snowpipe-ingestion/
 
 ##⚙️ Step-by-Step Implementation
 
-###1️⃣ Create Target Table
-Create the Snowflake table where data will be loaded.
+### 1️⃣ Create Target Table
+- Create the Snowflake table where data will be loaded.
 
-###2️⃣ Create File Format
-Defines how Snowflake reads CSV files.
+### 2️⃣ Create File Format
+- Defines how Snowflake reads CSV files.
 
-###3️⃣ Create Storage Integration
-Allows Snowflake to securely access S3 using IAM roles (no AWS keys).
+### 3️⃣ Create Storage Integration
+- Allows Snowflake to securely access S3 using IAM roles (no AWS keys).
 
 Inspect integration details:
 
@@ -103,39 +103,39 @@ DESC STORAGE INTEGRATION s3_int;
 SHOW STORAGE INTEGRATIONS;
 ```
 
-###4️⃣ Configure AWS IAM Role
-Create an IAM Role in AWS
-Update Trust Policy using values from:
+### 4️⃣ Configure AWS IAM Role
+- Create an IAM Role in AWS
+- Update Trust Policy using values from:
 
 ```bash
 DESC STORAGE INTEGRATION s3_int;
 ```
-###5️⃣ Create External Stage
-Points Snowflake to the S3 location.
-Validate:
+### 5️⃣ Create External Stage
+- Points Snowflake to the S3 location.
+- Validate:
 
 ```bash
 LIST @MANAGE_DB.EXTERNAL_STAGES.csv_folder;
 ```
 
-###6️⃣ Create Snowpipe
-Automatically loads data when new files arrive in S3.
-Check pipe status:
+### 6️⃣ Create Snowpipe
+- Automatically loads data when new files arrive in S3.
+- Check pipe status:
 
 ```bash
 DESC PIPE MANAGE_DB.PIPES.employee_pipe;
 ```
 
-###7️⃣ Upload CSV Files to S3
-Snowpipe automatically ingests the data.
+### 7️⃣ Upload CSV Files to S3
+- Snowpipe automatically ingests the data.
 
-###8️⃣ Validate Loaded Data
+### 8️⃣ Validate Loaded Data
 
 ```bash
 SELECT * FROM first_db.public.employees;
 ```
 
-##✅ Best Practices Followed
+## ✅ Best Practices Followed
 
 IAM role-based secure access
 
@@ -147,7 +147,7 @@ Event-driven ingestion with Snowpipe
 
 Modular and reusable SQL scripts
 
-##🧠 Key Learnings
+## 🧠 Key Learnings
 
 Secure Snowflake–AWS integration using Storage Integrations
 
