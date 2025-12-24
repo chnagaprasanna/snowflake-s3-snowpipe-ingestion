@@ -45,7 +45,7 @@ The project focuses on:
 ---
 
 ## 🏗 Architecture  
-```bash
+```text
 AWS S3 (CSV Files)
 ↓
 Snowflake Storage Integration (IAM Role + External ID)
@@ -85,7 +85,7 @@ snowflake-s3-snowpipe-ingestion/
 
 ```
 
-##⚙️ Step-by-Step Implementation
+## ⚙️ Step-by-Step Implementation
 
 ### 1️⃣ Create Target Table
 - Create the Snowflake table where data will be loaded.
@@ -137,22 +137,22 @@ SELECT * FROM first_db.public.employees;
 
 ## ✅ Best Practices Followed
 
-IAM role-based secure access
+- IAM role-based secure access
 
-External ID for confused-deputy protection
+- External ID for confused-deputy protection
 
-No static AWS credentials
+- No static AWS credentials
 
-Event-driven ingestion with Snowpipe
+- Event-driven ingestion with Snowpipe
 
-Modular and reusable SQL scripts
+- Modular and reusable SQL scripts
 
 ## 🧠 Key Learnings
 
-Secure Snowflake–AWS integration using Storage Integrations
+- Secure Snowflake–AWS integration using Storage Integrations
 
-External Stages for cloud storage access
+- External Stages for cloud storage access
 
-Real-time ingestion using Snowpipe
+- Real-time ingestion using Snowpipe
 
-Production-grade Snowflake ingestion design
+- Production-grade Snowflake ingestion design
