@@ -13,7 +13,6 @@
   />
 </p>
 
-
 <br/>
 
 ## 📌 Project Overview  
@@ -46,7 +45,7 @@ The project focuses on:
 ---
 
 ## 🏗 Architecture  
-'''bash
+```bash
 AWS S3 (CSV Files)
 ↓
 Snowflake Storage Integration (IAM Role + External ID)
@@ -56,10 +55,9 @@ External Stage
 Snowpipe (AUTO_INGEST = TRUE)
 ↓
 Snowflake Target Table
-'''
+```
 
 <img width="1365" height="655" alt="snowpipe_architecture" src="https://github.com/user-attachments/assets/61bf57c0-e40d-40ff-a596-fd8cf75d1eb0" />
-
 
 
 ---
@@ -85,7 +83,7 @@ snowflake-s3-snowpipe-ingestion/
 │
 └── README.md
 
-'''
+```
 
 ##⚙️ Step-by-Step Implementation
 
@@ -99,38 +97,43 @@ Defines how Snowflake reads CSV files.
 Allows Snowflake to securely access S3 using IAM roles (no AWS keys).
 
 Inspect integration details:
-'''bash
+
+```bash
 DESC STORAGE INTEGRATION s3_int;
 SHOW STORAGE INTEGRATIONS;
-'''
+```
 
 ###4️⃣ Configure AWS IAM Role
 Create an IAM Role in AWS
 Update Trust Policy using values from:
-'''bash
+
+```bash
 DESC STORAGE INTEGRATION s3_int;
-'''
+```
 ###5️⃣ Create External Stage
 Points Snowflake to the S3 location.
 Validate:
-'''bash
+
+```bash
 LIST @MANAGE_DB.EXTERNAL_STAGES.csv_folder;
-'''
+```
 
 ###6️⃣ Create Snowpipe
 Automatically loads data when new files arrive in S3.
 Check pipe status:
-'''bash
+
+```bash
 DESC PIPE MANAGE_DB.PIPES.employee_pipe;
-'''
+```
 
 ###7️⃣ Upload CSV Files to S3
 Snowpipe automatically ingests the data.
 
 ###8️⃣ Validate Loaded Data
-'''bash
+
+```bash
 SELECT * FROM first_db.public.employees;
-'''
+```
 
 ##✅ Best Practices Followed
 
