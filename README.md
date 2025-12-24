@@ -83,7 +83,7 @@ snowflake-s3-snowpipe-ingestion/
 └── README.md
 
 ```
-
+---
 ## ⚙️ Step-by-Step Implementation
 
 ### 1️⃣ Create Target Table
