@@ -12,7 +12,6 @@
     width="100%"
   />
 </p>
-
 <br/>
 
 ## 📌 Project Overview  
@@ -96,7 +95,7 @@ snowflake-s3-snowpipe-ingestion/
 ### 3️⃣ Create Storage Integration
 - Allows Snowflake to securely access S3 using IAM roles (no AWS keys).
 
-Inspect integration details:
+- Inspect integration details:
 
 ```bash
 DESC STORAGE INTEGRATION s3_int;
@@ -134,7 +133,7 @@ DESC PIPE MANAGE_DB.PIPES.employee_pipe;
 ```bash
 SELECT * FROM first_db.public.employees;
 ```
-
+---
 ## ✅ Best Practices Followed
 
 - IAM role-based secure access
